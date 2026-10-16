@@ -1,0 +1,2763 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="csrf-token" content="wO9nr15nWOcOXj7U2GUbftzwJxuHx2SLlUSCU45P">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#030712">
+    <title>Purchase Virtual Number</title>
+    <link rel="icon" type="image/png" href="/images/verixa.png">
+    <link rel="apple-touch-icon" href="/images/verixa.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --bg-card: #161618;
+            --bg-card-elevated: #1f1f23;
+            --bg-input: #121214;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-active: rgba(20, 184, 166, 0.4);
+            --primary: #14b8a6;
+            --primary-teal: #14b8a6;
+            --primary-soft: rgba(20, 184, 166, 0.14);
+            --primary-glow: rgba(20, 184, 166, 0.35);
+            --accent: #38bdf8;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --text-white: #ffffff;
+            --text-secondary: #9ca3af;
+            --text-tertiary: #71717a;
+            --text-quaternary: #52525b;
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+            --nav-height: 60px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #020611;
+            color: var(--text-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            user-select: none;
+            -webkit-user-select: none;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 480px) {
+            body {
+                background:
+                    radial-gradient(circle 800px at 50% 10%, rgba(20, 184, 166, 0.14) 0%, transparent 60%),
+                    radial-gradient(circle 600px at 50% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 55%),
+                    #030712;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* ——— App Shell ——— */
+        .app-shell {
+            width: 100%;
+            max-width: 430px;
+            height: 100vh;
+            height: 100dvh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        @media (min-width: 480px) {
+            .app-shell {
+                max-width: 430px;
+                height: min(920px, calc(100vh - 28px));
+                border-radius: 44px;
+                border: 2px solid rgba(20, 184, 166, 0.35);
+                box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 50px rgba(20, 184, 166, 0.2);
+            }
+        }
+
+        /* ——— Status Bar (iOS-style) ——— */
+        .status-bar {
+            height: calc(var(--safe-top) + 12px);
+            min-height: 16px;
+            background: transparent;
+            flex-shrink: 0;
+        }
+
+        /* ——— Top App Bar ——— */
+        .app-bar {
+            flex-shrink: 0;
+            padding: 0 20px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .app-bar-title {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-white);
+        }
+
+        .app-bar-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .app-bar-icon-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+
+        .app-bar-icon-btn:active {
+            background: var(--bg-card-elevated);
+            transform: scale(0.94);
+        }
+
+        /* ——— Scrollable Content ——— */
+        .scroll-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 20px calc(var(--nav-height) + var(--safe-bottom) + 16px);
+            scroll-behavior: smooth;
+        }
+
+        .scroll-content::-webkit-scrollbar { display: none; }
+
+        /* ——— Bottom Tab Bar ——— */
+        .tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: calc(var(--nav-height) + var(--safe-bottom));
+            padding-bottom: var(--safe-bottom);
+            background: #000000;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            z-index: 100;
+        }
+
+        .tab-bar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 14px;
+            color: #8e8e93;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            position: relative;
+            transition: color 0.15s ease;
+        }
+
+        .tab-bar-item svg {
+            transition: all 0.15s ease;
+        }
+
+        .tab-bar-item.active {
+            color: #14b8a6;
+        }
+
+        .tab-bar-item.active svg {
+            color: #14b8a6;
+        }
+
+        .tab-fab {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            background: linear-gradient(145deg, #14b8a6, #0d9488);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(20, 184, 166, 0.4);
+            margin-top: -16px;
+            transition: transform 0.15s ease;
+        }
+
+        .tab-fab:active { transform: scale(0.92); }
+
+        /* ——— Reusable Components ——— */
+
+        /* Section Headers */
+        .section-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            letter-spacing: 0.02em;
+            margin-bottom: 12px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .card:active {
+            transform: scale(0.985);
+            border-color: var(--border-active);
+        }
+
+        .card-body { padding: 18px; }
+
+        /* Metric Pill */
+        .metric-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .metric-pill {
+            flex: 1;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .metric-pill-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .metric-pill-value {
+            font-size: 22px;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.02em;
+        }
+
+        .metric-pill-sub {
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+
+        /* Balance Hero Card */
+        .balance-hero {
+            background: linear-gradient(145deg, #0a1f3d 0%, #0d2b50 50%, #0a1628 100%);
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            border-radius: 22px;
+            padding: 24px 22px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balance-hero::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .balance-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .balance-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .balance-amount {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-white);
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.02em;
+            margin-top: 6px;
+        }
+
+        .balance-sub {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .balance-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            font-family: inherit;
+        }
+
+        .btn:active { transform: scale(0.97); }
+
+        .btn-primary {
+            background: linear-gradient(145deg, #14b8a6, #0d9488);
+            color: #fff;
+            padding: 12px 20px;
+            box-shadow: 0 2px 12px rgba(20, 184, 166, 0.3);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            padding: 12px 20px;
+        }
+
+        .btn-sm {
+            padding: 8px 14px;
+            font-size: 12px;
+            border-radius: 10px;
+        }
+
+        .btn-danger-outline {
+            background: transparent;
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            padding: 12px 20px;
+        }
+
+        .btn-full { width: 100%; }
+
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .badge-success { background: rgba(16, 185, 129, 0.12); color: #34d399; }
+        .badge-warning { background: rgba(245, 158, 11, 0.12); color: #fbbf24; }
+        .badge-danger { background: rgba(239, 68, 68, 0.12); color: #f87171; }
+        .badge-info { background: rgba(6, 182, 212, 0.12); color: #67e8f9; }
+        .badge-primary { background: var(--primary-soft); color: #5eead4; }
+        .badge-neutral { background: rgba(255, 255, 255, 0.06); color: var(--text-tertiary); }
+
+        /* Status dot */
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .status-dot-pulse {
+            animation: dot-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes dot-pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.5); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(20, 184, 166, 0); }
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 16px 0;
+        }
+
+        /* List Items */
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .list-item:last-child { border-bottom: none; }
+
+        .list-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .list-content { flex: 1; min-width: 0; }
+
+        .list-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .list-subtitle {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-top: 2px;
+        }
+
+        .list-trailing {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        /* Session Cards */
+        .session-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-active);
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .session-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .session-phone {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2dd4bf;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.04em;
+        }
+
+        .otp-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+            padding: 14px;
+            border-radius: 14px;
+            background: rgba(20, 184, 166, 0.08);
+            border: 1px solid rgba(20, 184, 166, 0.25);
+        }
+
+        .otp-code {
+            font-size: 28px;
+            font-weight: 900;
+            color: #2dd4bf;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.18em;
+        }
+
+        /* Form Inputs */
+        .form-group { margin-bottom: 18px; }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .form-select, .form-input {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 16px;
+            color: var(--text-white);
+            font-size: 15px;
+            font-family: inherit;
+            appearance: none;
+            -webkit-appearance: none;
+            transition: all 0.2s ease;
+        }
+
+        .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+
+        .form-select:focus, .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-soft);
+        }
+
+        /* Shimmer / Loading */
+        .skeleton {
+            background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-elevated) 50%, var(--bg-card) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .empty-state-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--primary-soft);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+        }
+
+        .empty-state-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 6px;
+        }
+
+        .empty-state-text {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            line-height: 1.5;
+        }
+
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Fade-in animation */
+        .fade-in {
+            animation: fadeIn 0.3s ease forwards;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Pull indicator */
+        .scroll-content::before {
+            content: '';
+            display: block;
+            height: 6px;
+        }
+    </style>
+    </head>
+<body>
+    <div class="app-shell">
+        <!-- Status Bar Zone -->
+        <div class="status-bar"></div>
+
+        <!-- App Bar -->
+                    <header class="app-bar">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                                            <a href="http://localhost:8000/mobile" style="color: var(--text-white); text-decoration: none; display: flex; align-items: center; margin-left: -4px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+                        </a>
+                        <span class="app-bar-title" style="font-size: 18px;">Get Number</span>
+                                    </div>
+
+                <div class="app-bar-actions">
+                                    </div>
+            </header>
+        
+        <!-- Flash Messages -->
+        
+        
+        <!-- Scrollable Content Area -->
+        <main class="scroll-content">
+            <div style="display: flex; flex-direction: column; gap: 14px; padding-bottom: 30px;">
+
+    <!-- Reusable State-Of-The-Art Purchase Number Component -->
+    <style>
+    /* Main Vertical Card */
+    .pv-container {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+        background: #0f141d;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 22px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(20, 184, 166, 0.04);
+        color: #ffffff;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .pv-label {
+        font-size: 15px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 10px;
+        display: block;
+        letter-spacing: -0.01em;
+    }
+
+    .pv-sublabel {
+        font-size: 11px;
+        font-weight: 700;
+        color: #64748b;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    /* Pill Groups (PVA-Style rounded-full) */
+    .pv-pill-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .pv-pill {
+        border-radius: 9999px;
+        padding: 9px 22px;
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        user-select: none;
+        background: #181d27;
+        color: #94a3b8;
+        border: 1.5px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pv-pill:hover {
+        border-color: rgba(20, 184, 166, 0.4);
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+
+    .pv-pill.active {
+        background: #14b8a6;
+        border-color: #14b8a6;
+        color: #022c22;
+        font-weight: 800;
+        box-shadow: 0 4px 16px rgba(20, 184, 166, 0.35);
+        transform: translateY(-1px);
+    }
+
+    /* Duration Pills */
+    .pv-dur-pill {
+        border-radius: 9999px;
+        padding: 8px 18px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        background: #181d27;
+        color: #94a3b8;
+        border: 1.5px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pv-dur-pill:hover {
+        border-color: rgba(20, 184, 166, 0.4);
+        color: #ffffff;
+    }
+
+    .pv-dur-pill.active {
+        background: #14b8a6;
+        border-color: #14b8a6;
+        color: #022c22;
+        font-weight: 800;
+        box-shadow: 0 4px 14px rgba(20, 184, 166, 0.32);
+    }
+
+    /* All Services Dashed Card */
+    .pv-allservices-card {
+        border: 1.5px dashed rgba(20, 184, 166, 0.45);
+        background: rgba(20, 184, 166, 0.04);
+        border-radius: 14px;
+        padding: 13px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        user-select: none;
+    }
+
+    .pv-allservices-card:hover {
+        border-color: #14b8a6;
+        background: rgba(20, 184, 166, 0.08);
+        transform: translateY(-1px);
+    }
+
+    /* Active: Filled teal gradient matching app theme */
+    .pv-allservices-card.active {
+        border-style: solid;
+        border-color: #14b8a6;
+        background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+        box-shadow: 0 8px 25px rgba(20, 184, 166, 0.4);
+        color: #ffffff;
+    }
+
+    .pv-allservices-card.active #pv-all-services-title {
+        color: #ffffff !important;
+    }
+
+    .pv-allservices-card.active #pv-all-services-star {
+        stroke: #ffffff !important;
+        fill: #ffffff !important;
+    }
+
+    .pv-allservices-card.active .pv-best-value-badge {
+        background: #042f2e;
+        color: #5eead4;
+    }
+
+    .pv-best-value-badge {
+        font-size: 10.5px;
+        font-weight: 800;
+        background: #14b8a6;
+        color: #022c22;
+        padding: 4px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.2s ease;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       DEDICATED ALL SERVICES LOADOUT CARD (APP DARK THEME)
+    ═══════════════════════════════════════════════════════════════════ */
+    .pv-as-dedicated-box {
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, rgba(15, 23, 42, 0.85) 100%);
+        border: 1.5px solid rgba(20, 184, 166, 0.32);
+        border-radius: 18px;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(20, 184, 166, 0.06);
+        animation: pvFadeIn 0.25s ease;
+        box-sizing: border-box;
+    }
+
+    .pv-as-top-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .pv-as-tag {
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+
+    .pv-as-carrier-badge {
+        background: #ffffff;
+        color: #0f172a;
+        padding: 3px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .pv-tmobile-logo {
+        background: #E20074;
+        color: #ffffff;
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    .pv-as-renewal-badge {
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        color: #38bdf8;
+        padding: 3px 10px;
+        border-radius: 9999px;
+        font-size: 12px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .pv-as-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .pv-as-price {
+        font-size: 30px;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+        font-family: inherit;
+    }
+
+    .pv-as-usd-ref {
+        font-size: 14px;
+        font-weight: 600;
+        color: #64748b;
+    }
+
+    .pv-as-duration-label {
+        font-size: 16px;
+        font-weight: 500;
+        color: #94a3b8;
+    }
+
+    .pv-as-description {
+        font-size: 13.5px;
+        line-height: 1.55;
+        color: #94a3b8;
+        margin: 0;
+    }
+
+    /* Big Green Buy Button */
+    .pv-as-buy-btn {
+        width: 100%;
+        height: 50px;
+        border-radius: 14px;
+        border: none;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 14px;
+        box-shadow: 0 8px 24px rgba(16, 185, 129, 0.32);
+        transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pv-as-buy-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(16, 185, 129, 0.45);
+        filter: brightness(1.06);
+    }
+
+    .pv-as-buy-btn:active {
+        transform: translateY(0);
+    }
+
+    /* Website & Location Trigger Buttons */
+    .pv-trigger-btn {
+        width: 100%;
+        height: 50px;
+        border-radius: 14px;
+        background: #141822;
+        border: 1.5px solid rgba(255, 255, 255, 0.1);
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.18s ease;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    .pv-trigger-btn:hover:not(:disabled) {
+        border-color: rgba(20, 184, 166, 0.45);
+        background: #171c28;
+    }
+
+    .pv-trigger-btn.disabled,
+    .pv-trigger-btn:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+        background: #11141c;
+        border-color: rgba(255, 255, 255, 0.06);
+    }
+
+    /* Green / Emerald Order Summary Card */
+    .pv-summary-card {
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.10) 0%, rgba(13, 148, 136, 0.05) 100%);
+        border: 1.5px solid rgba(20, 184, 166, 0.32);
+        border-radius: 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        animation: pvFadeIn 0.25s ease;
+    }
+
+    @keyframes pvFadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .pv-summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .pv-summary-label {
+        color: #94a3b8;
+        font-weight: 500;
+    }
+
+    .pv-summary-val {
+        color: #ffffff;
+        font-weight: 700;
+    }
+
+    /* Primary Purchase Button */
+    .pv-buy-btn {
+        width: 100%;
+        height: 52px;
+        border-radius: 14px;
+        border: none;
+        cursor: pointer;
+        font-size: 15.5px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+        color: #022c22;
+        box-shadow: 0 8px 24px rgba(20, 184, 166, 0.32);
+        transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    }
+
+    .pv-buy-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(20, 184, 166, 0.45);
+        filter: brightness(1.05);
+    }
+
+    .pv-buy-btn:active:not(:disabled) {
+        transform: translateY(0);
+    }
+
+    .pv-buy-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+        background: #1e293b;
+        color: #64748b;
+    }
+
+    /* Guarantee tag */
+    .pv-guarantee {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-size: 11.5px;
+        color: #94a3b8;
+        font-weight: 500;
+        text-align: center;
+        margin-top: -6px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       STATE-OF-THE-ART BOTTOM SHEET MODAL ("Select Website")
+    ═══════════════════════════════════════════════════════════════════ */
+    .pv-sheet-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .pv-sheet-backdrop.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .pv-sheet-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 480px;
+        margin: 0 auto;
+        max-height: 82vh;
+        height: 620px;
+        background: #11151f;
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-bottom: none;
+        box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(20, 184, 166, 0.15);
+        z-index: 10001;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(105%);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+        color: #ffffff;
+    }
+
+    .pv-sheet-container.open {
+        transform: translateY(0);
+    }
+
+    .pv-sheet-handle-wrap {
+        padding: 10px 0 6px;
+        display: flex;
+        justify-content: center;
+        cursor: grab;
+    }
+
+    .pv-sheet-handle {
+        width: 42px;
+        height: 5px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.25);
+    }
+
+    .pv-sheet-header {
+        padding: 6px 20px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-shrink: 0;
+    }
+
+    .pv-sheet-title {
+        font-size: 19px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+    }
+
+    .pv-sheet-done-btn {
+        background: transparent;
+        border: none;
+        color: #14b8a6;
+        font-size: 15.5px;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 4px 10px;
+        border-radius: 8px;
+        transition: background 0.15s ease;
+    }
+
+    .pv-sheet-done-btn:hover {
+        background: rgba(20, 184, 166, 0.12);
+    }
+
+    .pv-sheet-search-wrap {
+        padding: 0 18px 12px;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .pv-sheet-search-input {
+        width: 100%;
+        height: 48px;
+        background: #171c28;
+        border: 1.5px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        padding: 0 40px 0 44px;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+        outline: none;
+        box-sizing: border-box;
+        font-family: inherit;
+        transition: border-color 0.18s ease;
+    }
+
+    .pv-sheet-search-input:focus {
+        border-color: #14b8a6;
+        background: #1b2130;
+    }
+
+    .pv-sheet-search-input::placeholder {
+        color: #64748b;
+    }
+
+    .pv-sheet-chips {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding: 0 18px 12px;
+        scrollbar-width: none;
+        flex-shrink: 0;
+    }
+    .pv-sheet-chips::-webkit-scrollbar { display: none; }
+
+    .pv-sheet-chip {
+        background: #181e2b;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #94a3b8;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.15s ease;
+    }
+
+    .pv-sheet-chip:hover {
+        background: rgba(20, 184, 166, 0.15);
+        border-color: #14b8a6;
+        color: #14b8a6;
+    }
+
+    /* Scrollable Sheet List */
+    .pv-sheet-list {
+        flex: 1;
+        overflow-y: auto;
+        padding: 4px 14px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(20, 184, 166, 0.3) transparent;
+    }
+
+    .pv-sheet-list::-webkit-scrollbar { width: 4px; }
+    .pv-sheet-list::-webkit-scrollbar-thumb { background: rgba(20, 184, 166, 0.3); border-radius: 4px; }
+
+    /* Single Website Item matching Screenshot 1 */
+    .pv-service-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: #141924;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        user-select: none;
+    }
+
+    .pv-service-row:hover {
+        background: #19202e;
+        border-color: rgba(20, 184, 166, 0.3);
+    }
+
+    .pv-service-row.selected {
+        background: rgba(20, 184, 166, 0.14);
+        border-color: #14b8a6;
+    }
+
+    .pv-service-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        overflow: hidden;
+    }
+
+    .pv-service-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: #1c2333;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 14px;
+        font-weight: 800;
+        color: #14b8a6;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .pv-service-title-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        overflow: hidden;
+    }
+
+    .pv-service-name-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .pv-service-name {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: #ffffff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* PVA Stock Pill Badge (e.g. 4942) */
+    .pv-stock-badge {
+        font-size: 11px;
+        font-weight: 700;
+        background: rgba(20, 184, 166, 0.16);
+        color: #2dd4bf;
+        padding: 2px 8px;
+        border-radius: 6px;
+        letter-spacing: 0.02em;
+    }
+
+    .pv-stock-badge.empty {
+        background: rgba(239, 68, 68, 0.14);
+        color: #f87171;
+    }
+
+    .pv-service-price-sub {
+        font-size: 12px;
+        font-weight: 700;
+        color: #14b8a6;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Checkbox on the right */
+    .pv-checkbox {
+        width: 22px;
+        height: 22px;
+        border-radius: 7px;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.15s ease;
+        background: transparent;
+    }
+
+    .pv-service-row.selected .pv-checkbox {
+        background: #14b8a6;
+        border-color: #14b8a6;
+    }
+
+    /* ── ACTIVE VERIFICATION STAGE (STAGE 2) ── */
+    #pv-active-stage {
+        animation: pvFadeIn 0.3s ease;
+    }
+
+    .pv-active-hero-card {
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.12) 0%, #141822 65%);
+        border: 1.5px solid rgba(20, 184, 166, 0.35);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4), 0 0 20px rgba(20, 184, 166, 0.08);
+    }
+
+    .pv-phone-display-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #0d111a;
+        border: 1px solid rgba(20, 184, 166, 0.25);
+        border-radius: 14px;
+        padding: 12px 16px;
+        margin-top: 6px;
+        gap: 10px;
+    }
+
+    .pv-phone-number-text {
+        font-size: 21px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 0.03em;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    .pv-copy-btn {
+        background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        padding: 8px 14px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 4px 12px rgba(20, 184, 166, 0.25);
+        transition: transform 0.15s ease, background 0.15s ease;
+        flex-shrink: 0;
+    }
+
+    .pv-copy-btn:active {
+        transform: scale(0.95);
+    }
+
+    .pv-sms-monitor-box {
+        background: #141822;
+        border: 1.5px dashed rgba(20, 184, 166, 0.3);
+        border-radius: 18px;
+        padding: 22px 18px;
+        text-align: center;
+    }
+
+    .pv-pulse-ring-wrap {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(20, 184, 166, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 10px;
+        position: relative;
+    }
+
+    .pv-pulse-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid #14b8a6;
+        animation: pvPulseRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    @keyframes pvPulseRing {
+        0% { transform: scale(0.85); opacity: 0.9; }
+        100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    .pv-sms-received-box {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.14) 0%, #141822 75%);
+        border: 1.5px solid #22c55e;
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 8px 24px rgba(34, 197, 94, 0.2);
+        animation: pvFadeIn 0.35s ease;
+    }
+
+    .pv-otp-hero-display {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #0d111a;
+        border: 1px solid rgba(34, 197, 94, 0.35);
+        border-radius: 14px;
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .pv-otp-code-text {
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        color: #ffffff;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    .pv-copy-otp-btn {
+        background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+        color: #000000;
+        border: none;
+        border-radius: 10px;
+        padding: 9px 15px;
+        font-size: 13px;
+        font-weight: 800;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+        transition: transform 0.15s ease;
+        flex-shrink: 0;
+    }
+
+    .pv-copy-otp-btn:active {
+        transform: scale(0.95);
+    }
+
+    .pv-cancel-btn {
+        width: 100%;
+        background: rgba(239, 68, 68, 0.08);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        color: #f87171;
+        border-radius: 14px;
+        padding: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+
+    .pv-cancel-btn:hover {
+        background: rgba(239, 68, 68, 0.16);
+    }
+
+    .pv-new-number-btn {
+        width: 100%;
+        background: #141822;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border-radius: 14px;
+        padding: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+
+    .pv-new-number-btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    @keyframes pvSpin { to { transform: rotate(360deg); } }
+</style>
+
+<div class="pv-container" id="pv-container-root">
+
+    
+    <div id="pv-purchase-stage">
+
+    
+    <div>
+        <span class="pv-label">Country</span>
+        <div class="pv-pill-group" id="pv-country-group">
+            <button type="button" class="pv-pill active" data-country="USA" onclick="pvSelectCountry('USA', this)">
+                United States
+            </button>
+            <button type="button" class="pv-pill" data-country="UK" onclick="pvSelectCountry('UK', this)">
+                United Kingdom
+            </button>
+        </div>
+    </div>
+
+    
+    <div>
+        <span class="pv-label">Duration</span>
+
+        <span class="pv-sublabel">SHORT-TERM RENTAL</span>
+        <div class="pv-pill-group" style="margin-bottom: 14px;">
+            <button type="button" class="pv-dur-pill active" data-type="STR" data-duration="20" onclick="pvSelectDuration('STR', 20, this)">
+                20 minutes
+            </button>
+        </div>
+
+        <span class="pv-sublabel">LONG-TERM RENTAL</span>
+        <div class="pv-pill-group">
+            <button type="button" class="pv-dur-pill" data-type="LTR" data-duration="3" onclick="pvSelectDuration('LTR', 3, this)">3 days</button>
+            <button type="button" class="pv-dur-pill" data-type="LTR" data-duration="7" onclick="pvSelectDuration('LTR', 7, this)">7 days</button>
+            <button type="button" class="pv-dur-pill" data-type="LTR" data-duration="14" onclick="pvSelectDuration('LTR', 14, this)">14 days</button>
+            <button type="button" class="pv-dur-pill" data-type="LTR" data-duration="30" onclick="pvSelectDuration('LTR', 30, this)">30 days</button>
+        </div>
+    </div>
+
+    
+    <div>
+        <div class="pv-allservices-card" id="pv-all-services-card" onclick="pvToggleAllServices()">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="pv-all-services-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span style="font-size: 15px; font-weight: 700; color: #14b8a6;" id="pv-all-services-title">All services</span>
+            </div>
+            <span class="pv-best-value-badge">BEST VALUE</span>
+        </div>
+    </div>
+
+    
+    <div id="pv-allservices-dedicated-wrap" style="display: none; animation: pvFadeIn 0.25s ease;">
+        <div class="pv-as-dedicated-box">
+            
+            <div class="pv-as-top-row">
+                <span class="pv-as-tag">ALL SERVICES</span>
+
+                
+                <div class="pv-as-carrier-badge" id="pv-as-carrier-badge">
+                    <span class="pv-tmobile-logo" id="pv-as-carrier-logo">T</span>
+                    <span id="pv-as-carrier-name">T-Mobile</span>
+                </div>
+
+                
+                <div class="pv-as-renewal-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;"><path d="m12 1 2.5 7.5L22 11l-7.5 2.5L12 21l-2.5-7.5L2 11l7.5-2.5z"/></svg>
+                    <span>Auto-renewal</span>
+                </div>
+            </div>
+
+            
+            <div class="pv-as-price-row">
+                <span class="pv-as-price" id="pv-as-price-val">$12.99</span>
+                <span class="pv-as-usd-ref" id="pv-as-usd-ref"></span>
+                <span class="pv-as-duration-label" id="pv-as-duration-suffix">/ 28 days</span>
+            </div>
+
+            
+            <p class="pv-as-description" id="pv-as-description-text">
+                One number that works on any website in the United States — no website to choose, and unlimited use for the full 28 days.
+            </p>
+        </div>
+
+        
+        <button type="button" class="pv-as-buy-btn" id="pv-as-buy-btn" onclick="pvExecutePurchase()">
+            <span id="pv-as-btn-text">Buy all-services number · $12.99</span>
+        </button>
+    </div>
+
+    
+    <div id="pv-website-location-fields">
+        
+        <div>
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
+                <span class="pv-label" style="margin-bottom: 0;">Website</span>
+                <span id="pv-selected-website-status" style="font-size: 12.5px; color: #94a3b8; font-weight: 500;">None selected</span>
+            </div>
+
+            <button type="button" class="pv-trigger-btn" id="pv-website-trigger" onclick="pvOpenWebsiteSheet()">
+                <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;" id="pv-website-icon">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                    </svg>
+                    <span id="pv-website-trigger-text" style="font-size: 14px; color: #64748b; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        Search & select website
+                    </span>
+                </div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" style="flex-shrink: 0;">
+                    <path d="m9 18 6-6-6-6"/>
+                </svg>
+            </button>
+        </div>
+
+        
+        <div style="margin-top: 20px;">
+            <span class="pv-label">Location <span style="font-size: 12.5px; font-weight: 500; color: #64748b;">(optional)</span></span>
+            <div id="pv-location-field-wrap">
+                <div class="pv-trigger-btn disabled" id="pv-location-disabled-btn">
+                    <span style="font-size: 14px; color: #475569; font-weight: 500;">Select website first</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </div>
+
+                <div id="pv-location-active-input-wrap" style="display: none;">
+                    <input type="text" id="pv-area-code-input"
+                           placeholder="Enter area code (e.g. 212, 310) — optional"
+                           maxlength="8"
+                           style="width: 100%; height: 50px; border-radius: 14px; background: #141822; border: 1.5px solid rgba(255, 255, 255, 0.12); padding: 0 16px; color: #ffffff; font-size: 14px; outline: none; font-family: inherit; box-sizing: border-box;"
+                           onfocus="this.style.borderColor='#14b8a6'"
+                           onblur="this.style.borderColor='rgba(255, 255, 255, 0.12)'">
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="pv-order-summary-card" class="pv-summary-card" style="display: none; margin-top: 20px;">
+            <div class="pv-summary-row">
+                <span class="pv-summary-label">Service</span>
+                <span class="pv-summary-val" id="pv-summary-service">—</span>
+            </div>
+            <div class="pv-summary-row">
+                <span class="pv-summary-label">Country</span>
+                <span class="pv-summary-val" id="pv-summary-country">United States</span>
+            </div>
+            <div class="pv-summary-row">
+                <span class="pv-summary-label">Rental Duration</span>
+                <span class="pv-summary-val" id="pv-summary-duration">20 minutes (Short-Term)</span>
+            </div>
+            <div class="pv-summary-row">
+                <span class="pv-summary-label">Stock Status</span>
+                <span class="pv-summary-val" id="pv-summary-stock" style="color: #4ade80;">● In Stock</span>
+            </div>
+
+            <div style="border-top: 1px solid rgba(20, 184, 166, 0.2); padding-top: 10px; margin-top: 4px;" class="pv-summary-row">
+                <div>
+                    <span class="pv-summary-label" style="font-size: 14px; font-weight: 700; color: #ffffff;">Rate (Naira)</span>
+                    <div id="pv-summary-usd-ref" style="font-size: 11px; color: #64748b;">Instant SMS Delivery</div>
+                </div>
+                <div style="text-align: right;">
+                    <span id="pv-summary-price-naira" style="font-size: 22px; font-weight: 800; color: #14b8a6; font-family: 'JetBrains Mono', monospace;">₦0</span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div style="margin-top: 20px;">
+            <button type="button" class="pv-buy-btn" id="pv-buy-button" onclick="pvExecutePurchase()" disabled>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.65 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.29 1.55.52 2.36.65A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span id="pv-buy-btn-text">Select website first</span>
+            </button>
+
+            <div class="pv-guarantee" style="margin-top: 10px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>Auto-refund if no SMS received within timeout period</span>
+            </div>
+        </div>
+    </div>
+
+            </div>
+    </div> 
+
+    
+    <div id="pv-active-stage" style="display: none;">
+        
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <button type="button" onclick="pvReturnToPurchaseStage()" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; border-radius: 9999px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+                <span>Buy another number</span>
+            </button>
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(34, 197, 94, 0.12); border: 1px solid rgba(34, 197, 94, 0.3); padding: 4px 10px; border-radius: 9999px;">
+                <span class="pv-pulse-dot" style="width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+                <span style="font-size: 11px; font-weight: 700; color: #4ade80; text-transform: uppercase; letter-spacing: 0.05em;">Live Session</span>
+            </div>
+        </div>
+
+        
+        <div class="pv-active-hero-card">
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span id="pv-active-country-flag" style="font-size: 22px;">🇺🇸</span>
+                    <div>
+                        <div id="pv-active-service-title" style="font-size: 15px; font-weight: 800; color: #ffffff;">All Services (T-Mobile)</div>
+                        <div id="pv-active-country-name" style="font-size: 11.5px; color: #94a3b8; font-weight: 500;">United States · Carrier SIM</div>
+                    </div>
+                </div>
+                <span id="pv-active-duration-badge" style="background: rgba(20, 184, 166, 0.15); border: 1px solid rgba(20, 184, 166, 0.3); color: #2dd4bf; padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 700;">
+                    20 mins
+                </span>
+            </div>
+
+            
+            <div class="pv-phone-display-wrap">
+                <div>
+                    <div style="font-size: 10px; font-weight: 700; color: #14b8a6; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px;">Allocated Phone Number</div>
+                    <div id="pv-active-phone-number" class="pv-phone-number-text">+1 (205) 492-8194</div>
+                </div>
+                <button type="button" class="pv-copy-btn" id="pv-copy-phone-btn" onclick="pvCopyActivePhone()">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span id="pv-copy-phone-text">Copy</span>
+                </button>
+            </div>
+
+            
+            <div style="margin-top: 14px; background: rgba(0,0,0,0.3); border-radius: 12px; padding: 10px 14px; border: 1px solid rgba(255,255,255,0.06);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                    <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #94a3b8; font-weight: 500;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>Time Remaining</span>
+                    </div>
+                    <div id="pv-active-timer" style="font-size: 15px; font-weight: 800; color: #fbbf24; font-family: 'JetBrains Mono', monospace;">19:59</div>
+                </div>
+                <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.08); border-radius: 9999px; overflow: hidden;">
+                    <div id="pv-active-timer-bar" style="width: 100%; height: 100%; background: linear-gradient(90deg, #14b8a6, #fbbf24); transition: width 1s linear;"></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div style="margin-top: 14px;">
+            
+            <div id="pv-sms-waiting-box" class="pv-sms-monitor-box">
+                <div class="pv-pulse-ring-wrap">
+                    <div class="pv-pulse-ring"></div>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div style="font-size: 14.5px; font-weight: 700; color: #ffffff; margin-bottom: 4px;">Waiting for Carrier SMS...</div>
+                <p style="font-size: 12.5px; color: #94a3b8; line-height: 1.5; margin: 0 auto; max-width: 320px;">
+                    Enter this number into <span id="pv-waiting-service-name" style="color: #2dd4bf; font-weight: 600;">the service</span>. The SMS verification code will arrive here automatically in seconds.
+                </p>
+
+                
+                <button type="button" onclick="pvSimulateIncomingSms()" style="margin-top: 14px; background: rgba(20, 184, 166, 0.12); border: 1px dashed rgba(20, 184, 166, 0.35); color: #2dd4bf; border-radius: 10px; padding: 7px 14px; font-size: 11.5px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <span>Simulate Incoming SMS</span>
+                </button>
+            </div>
+
+            
+            <div id="pv-sms-received-box" class="pv-sms-received-box" style="display: none;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                    <div style="display: inline-flex; align-items: center; gap: 6px; color: #22c55e; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Verification Code Received</span>
+                    </div>
+                    <span id="pv-sms-received-time" style="font-size: 11px; color: #94a3b8; font-weight: 500;">Just now</span>
+                </div>
+
+                <div class="pv-otp-hero-display">
+                    <div id="pv-active-otp-val" class="pv-otp-code-text">849 201</div>
+                    <button type="button" class="pv-copy-otp-btn" id="pv-copy-otp-btn" onclick="pvCopyActiveOtp()">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        <span id="pv-copy-otp-text">Copy Code</span>
+                    </button>
+                </div>
+
+                <div style="margin-top: 10px; background: rgba(0,0,0,0.25); border-radius: 10px; padding: 10px 12px; font-size: 12px; color: #e2e8f0; line-height: 1.4; border-left: 3px solid #22c55e;">
+                    <span style="color: #94a3b8; font-size: 11px; display: block; margin-bottom: 2px;">Full Message:</span>
+                    <span id="pv-sms-message-body">Your WhatsApp code is 849-201. Do not share this code with anyone.</span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 10px;">
+            <button type="button" onclick="pvCancelActiveSession()" class="pv-cancel-btn" id="pv-active-cancel-btn">
+                Cancel & Auto-Refund
+            </button>
+            <button type="button" onclick="pvReturnToPurchaseStage()" class="pv-new-number-btn">
+                Get Another Number
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="pv-sheet-backdrop" id="pv-sheet-backdrop" onclick="pvCloseWebsiteSheet()"></div>
+
+<div class="pv-sheet-container" id="pv-bottom-sheet">
+    
+    <div class="pv-sheet-handle-wrap" onclick="pvCloseWebsiteSheet()">
+        <div class="pv-sheet-handle"></div>
+    </div>
+
+    
+    <div class="pv-sheet-header">
+        <span class="pv-sheet-title">Select website</span>
+        <button type="button" class="pv-sheet-done-btn" onclick="pvCloseWebsiteSheet()">Done</button>
+    </div>
+
+    
+    <div class="pv-sheet-search-wrap">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" style="position: absolute; left: 32px; top: 50%; transform: translateY(-70%); pointer-events: none;">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" class="pv-sheet-search-input" id="pv-sheet-search-input"
+               placeholder="Search websites"
+               oninput="pvFilterWebsites(this.value)">
+    </div>
+
+    
+    <div class="pv-sheet-chips">
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('')">All</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('WhatsApp')">WhatsApp</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('Telegram')">Telegram</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('OpenAI')">OpenAI / ChatGPT</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('Google')">Google</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('TikTok')">TikTok</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('Instagram')">Instagram</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('Twitter')">Twitter / X</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('Discord')">Discord</button>
+        <button type="button" class="pv-sheet-chip" onclick="pvQuickPick('Tinder')">Tinder</button>
+    </div>
+
+    
+    <div class="pv-sheet-list" id="pv-sheet-list">
+        <div id="pv-sheet-loading" style="text-align: center; padding: 40px 20px; color: #94a3b8; font-size: 13.5px;">
+            <div style="display: inline-block; width: 22px; height: 22px; border: 2.5px solid rgba(20, 184, 166, 0.3); border-top-color: #14b8a6; border-radius: 50%; animation: pvSpin 0.7s linear infinite; margin-bottom: 10px;"></div>
+            <div>Loading verified services in Naira...</div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+(function() {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content || 'wO9nr15nWOcOXj7U2GUbftzwJxuHx2SLlUSCU45P';
+
+    // State
+    let pvState = {
+        country: 'USA',
+        durationType: 'STR',
+        durationDays: 20,
+        isAllServices: false,
+        selectedWebsite: null,
+        catalog: [],
+        allServicesData: null,
+        filterQuery: '',
+        currencySymbol: '₦',
+        exchangeRate: 1650,
+    };
+
+    // Helper for robust API endpoint resolution across XAMPP subpath & standard domain
+    function getApiEndpoint(endpoint) {
+        const path = window.location.pathname;
+        const pubIdx = path.indexOf('/public');
+        if (pubIdx !== -1) {
+            return path.substring(0, pubIdx + 7) + '/api/v1' + endpoint;
+        }
+        return '/api/v1' + endpoint;
+    }
+
+    function formatNaira(amount) {
+        return pvState.currencySymbol + Number(amount).toLocaleString('en-NG', { maximumFractionDigits: 0 });
+    }
+
+    // ── 1. Country Switching ──
+    window.pvSelectCountry = function(country, btn) {
+        pvState.country = country;
+        document.querySelectorAll('#pv-country-group .pv-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (pvState.isAllServices) {
+            renderAllServicesDedicatedCard();
+        } else {
+            resetWebsiteState();
+        }
+
+        pvFetchCatalog();
+    };
+
+    // ── 2. Duration Switching ──
+    window.pvSelectDuration = function(type, days, btn) {
+        pvState.durationType = type;
+        pvState.durationDays = days;
+
+        document.querySelectorAll('.pv-dur-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (pvState.isAllServices) {
+            renderAllServicesDedicatedCard();
+        } else {
+            // Re-render sheet list if populated to reflect duration prices
+            if (pvState.catalog.length > 0) {
+                renderWebsites(getFilteredList());
+            }
+            updateSummary();
+        }
+    };
+
+    // ── 3. All Services Functionality (Exact PVADeals Behavior - Screenshot 2) ──
+    window.pvToggleAllServices = function() {
+        pvState.isAllServices = !pvState.isAllServices;
+        const card = document.getElementById('pv-all-services-card');
+
+        if (pvState.isAllServices) {
+            card.classList.add('active');
+            document.getElementById('pv-website-location-fields').style.display = 'none';
+            document.getElementById('pv-allservices-dedicated-wrap').style.display = 'block';
+            pvCloseWebsiteSheet();
+            renderAllServicesDedicatedCard();
+        } else {
+            card.classList.remove('active');
+            document.getElementById('pv-allservices-dedicated-wrap').style.display = 'none';
+            document.getElementById('pv-website-location-fields').style.display = 'block';
+            resetWebsiteState();
+        }
+    };
+
+    function renderAllServicesDedicatedCard() {
+        const rate = pvState.exchangeRate || 1650;
+        const allSrv = pvState.allServicesData;
+
+        let priceUsd = 1.50;
+        let durSuffix = '/ 20 minutes';
+        let durDesc = 'full 20 minutes';
+
+        if (pvState.durationType === 'STR') {
+            priceUsd = allSrv?.str_usd || 1.50;
+            durSuffix = '/ 20 minutes';
+            durDesc = 'full 20 minutes';
+        } else {
+            if (pvState.durationDays == 3) {
+                priceUsd = allSrv?.ltr3_usd || 4.00;
+                durSuffix = '/ 3 days';
+                durDesc = 'full 3 days';
+            } else if (pvState.durationDays == 7) {
+                priceUsd = allSrv?.ltr7_usd || 7.50;
+                durSuffix = '/ 7 days';
+                durDesc = 'full 7 days';
+            } else if (pvState.durationDays == 14) {
+                priceUsd = allSrv?.ltr14_usd || 10.99;
+                durSuffix = '/ 14 days';
+                durDesc = 'full 14 days';
+            } else { // 30 / 28 days (PVADeals promo $12.99)
+                priceUsd = allSrv?.ltr28_usd || allSrv?.ltr30_usd || 12.99;
+                durSuffix = '/ 28 days';
+                durDesc = 'full 28 days';
+            }
+        }
+
+        const priceNgn = Math.round(priceUsd * rate);
+
+        // Virtual selected website object for purchase payload
+        pvState.selectedWebsite = {
+            id: 'ALL_SERVICES',
+            name: 'All services (Universal Line)',
+            price: priceNgn,
+            price_usd: priceUsd,
+            stock: 9999,
+        };
+
+        // Update dedicated All Services Card — USD price like PVADeals
+        document.getElementById('pv-as-price-val').textContent = `$${priceUsd.toFixed(2)}`;
+        document.getElementById('pv-as-usd-ref').textContent = '';
+        document.getElementById('pv-as-duration-suffix').textContent = durSuffix;
+
+        const countryName = pvState.country === 'USA' ? 'United States' : 'United Kingdom';
+        document.getElementById('pv-as-description-text').textContent = 
+            `One number that works on any website in the ${countryName} — no website to choose, and unlimited use for the ${durDesc}.`;
+
+        // Carrier Badge
+        const carrierLogo = document.getElementById('pv-as-carrier-logo');
+        const carrierName = document.getElementById('pv-as-carrier-name');
+        if (pvState.country === 'USA') {
+            carrierLogo.textContent = 'T';
+            carrierLogo.style.background = '#E20074';
+            carrierName.textContent = 'T-Mobile';
+        } else {
+            carrierLogo.textContent = 'EE';
+            carrierLogo.style.background = '#007B85';
+            carrierName.textContent = 'EE';
+        }
+
+        // Green Buy Button Text — USD like PVADeals
+        document.getElementById('pv-as-btn-text').textContent = `Buy all-services number · $${priceUsd.toFixed(2)}`;
+    }
+
+    // ── 4. Bottom Sheet Modal Controls (Screenshot 1) ──
+    window.pvOpenWebsiteSheet = function() {
+        const backdrop = document.getElementById('pv-sheet-backdrop');
+        const sheet = document.getElementById('pv-bottom-sheet');
+
+        backdrop.classList.add('open');
+        sheet.classList.add('open');
+        document.body.style.overflow = 'hidden';
+
+        const input = document.getElementById('pv-sheet-search-input');
+        input.value = '';
+        setTimeout(() => input.focus(), 200);
+
+        if (pvState.catalog.length === 0) {
+            pvFetchCatalog();
+        } else {
+            renderWebsites(pvState.catalog);
+        }
+    };
+
+    window.pvCloseWebsiteSheet = function() {
+        const backdrop = document.getElementById('pv-sheet-backdrop');
+        const sheet = document.getElementById('pv-bottom-sheet');
+
+        backdrop.classList.remove('open');
+        sheet.classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    // ── 5. Fetch Catalog from API with Naira Conversion ──
+    async function pvFetchCatalog() {
+        const listEl = document.getElementById('pv-sheet-list');
+        listEl.innerHTML = `
+            <div style="text-align: center; padding: 40px 20px; color: #94a3b8; font-size: 13.5px;">
+                <div style="display: inline-block; width: 22px; height: 22px; border: 2.5px solid rgba(20, 184, 166, 0.3); border-top-color: #14b8a6; border-radius: 50%; animation: pvSpin 0.7s linear infinite; margin-bottom: 10px;"></div>
+                <div>Converting prices to Naira & loading catalog...</div>
+            </div>
+        `;
+
+        try {
+            const endpoint = getApiEndpoint('/pvadeals/websites?country=' + encodeURIComponent(pvState.country) + '&currency=NGN');
+            const res = await fetch(endpoint);
+            const json = await res.json();
+
+            if (json.success && Array.isArray(json.data)) {
+                pvState.catalog = json.data;
+                if (json.currency) {
+                    pvState.currencySymbol = json.currency.symbol || '₦';
+                    pvState.exchangeRate = json.currency.exchange_rate || 1650;
+                }
+                if (json.all_services) {
+                    pvState.allServicesData = json.all_services;
+                }
+                renderWebsites(pvState.catalog);
+
+                if (pvState.isAllServices) {
+                    updateAllServicesState();
+                }
+            } else {
+                listEl.innerHTML = '<div style="padding: 30px; text-align: center; color: #f87171; font-size: 13.5px;">Failed to load catalog. Please retry.</div>';
+            }
+        } catch (err) {
+            console.error('PVADeals Catalog error', err);
+            listEl.innerHTML = '<div style="padding: 30px; text-align: center; color: #f87171; font-size: 13.5px;">Network connection error.</div>';
+        }
+    }
+
+    // ── 6. Filtering & Quick Brand Picks ──
+    window.pvFilterWebsites = function(term) {
+        pvState.filterQuery = (term || '').toLowerCase().trim();
+        renderWebsites(getFilteredList());
+    };
+
+    window.pvQuickPick = function(brandName) {
+        const input = document.getElementById('pv-sheet-search-input');
+        input.value = brandName;
+        pvFilterWebsites(brandName);
+    };
+
+    function getFilteredList() {
+        if (!pvState.filterQuery) return pvState.catalog;
+        return pvState.catalog.filter(s => s.name.toLowerCase().includes(pvState.filterQuery));
+    }
+
+    // ── Brand Avatar Generator ──
+    function getServiceAvatarHtml(name) {
+        const clean = name.replace(/^[^a-zA-Z0-9]+/, '').trim();
+        const initial = clean.charAt(0).toUpperCase() || '★';
+
+        const lower = name.toLowerCase();
+        if (lower.includes('whatsapp')) {
+            return `<div class="pv-service-avatar" style="background: rgba(37, 211, 102, 0.15); border-color: #25D366; color: #25D366;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.26-1.93 1.34-.51.08-1.17.14-3.37-.77-2.82-1.16-4.63-4.04-4.77-4.23-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06.98-2.34.25-.28.56-.35.75-.35.19 0 .37.002.53.01.17.01.4.06.62.59.24.57.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.33-.3.51-.15.18-.32.4-.46.54-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.71-.15.29.11 1.86.88 2.18 1.04.32.16.53.24.61.37.08.14.08.79-.16 1.47z"/></svg>
+            </div>`;
+        }
+        if (lower.includes('telegram')) {
+            return `<div class="pv-service-avatar" style="background: rgba(0, 136, 204, 0.15); border-color: #0088cc; color: #0088cc;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#0088cc"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            </div>`;
+        }
+        if (lower.includes('openai') || lower.includes('chatgpt')) {
+            return `<div class="pv-service-avatar" style="background: rgba(16, 163, 127, 0.15); border-color: #10a37f; color: #10a37f;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#10a37f"><path d="M22.28 10.42a5.45 5.45 0 0 0-.46-4.42 5.56 5.56 0 0 0-4.77-2.73 5.43 5.43 0 0 0-1.89.34A5.5 5.5 0 0 0 10.74 2a5.57 5.57 0 0 0-5.32 3.86 5.45 5.45 0 0 0-3.41 2.48 5.54 5.54 0 0 0 .58 6.45 5.45 5.45 0 0 0 .46 4.42 5.56 5.56 0 0 0 4.77 2.73 5.4 5.4 0 0 0 1.89-.34A5.5 5.5 0 0 0 14.13 23a5.57 5.57 0 0 0 5.32-3.86 5.45 5.45 0 0 0 3.41-2.48 5.54 5.54 0 0 0-.58-6.24z"/></svg>
+            </div>`;
+        }
+        if (lower.includes('google') || lower.includes('gmail')) {
+            return `<div class="pv-service-avatar" style="background: #ffffff;">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27a7.195 7.195 0 0 1 0-4.54V6.58H1.25a11.96 11.96 0 0 0 0 10.84l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.93 6.72-4.93z"/></svg>
+            </div>`;
+        }
+
+        // Palette generator based on initials
+        const colors = [
+            'linear-gradient(135deg, #14b8a6, #0d9488)',
+            'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+            'linear-gradient(135deg, #8b5cf6, #6d28d9)',
+            'linear-gradient(135deg, #ec4899, #be185d)',
+            'linear-gradient(135deg, #f59e0b, #b45309)',
+        ];
+        const colorIdx = Math.abs(name.split('').reduce((a, b) => a + b.charCodeAt(0), 0)) % colors.length;
+
+        return `<div class="pv-service-avatar" style="background: ${colors[colorIdx]}; color: #ffffff;">
+            ${initial}
+        </div>`;
+    }
+
+    // ── 7. Render Website List matching Screenshot 1 ──
+    function renderWebsites(items) {
+        const listEl = document.getElementById('pv-sheet-list');
+        listEl.innerHTML = '';
+
+        if (!items || items.length === 0) {
+            listEl.innerHTML = '<div style="padding: 40px; text-align: center; color: #64748b; font-size: 14px;">No services matching your search.</div>';
+            return;
+        }
+
+        const maxDisplay = 120;
+        const slice = items.slice(0, maxDisplay);
+
+        slice.forEach(item => {
+            const isSelected = pvState.selectedWebsite?.id === item.id;
+            const priceNaira = getPriceForItem(item);
+            const priceUsd = getPriceUsdForItem(item);
+            const stock = getStockForItem(item);
+
+            const row = document.createElement('div');
+            row.className = 'pv-service-row' + (isSelected ? ' selected' : '');
+            row.onclick = () => pvSelectWebsite(item);
+
+            row.innerHTML = `
+                <div class="pv-service-left">
+                    ${getServiceAvatarHtml(item.name)}
+                    <div class="pv-service-title-wrap">
+                        <div class="pv-service-name-row">
+                            <span class="pv-service-name">${item.name}</span>
+                            <span class="pv-stock-badge ${stock <= 0 ? 'empty' : ''}">${stock > 0 ? stock : '0'}</span>
+                        </div>
+                        <div class="pv-service-price-sub">${formatNaira(priceNaira)} <span style="font-weight: 500; font-size: 10.5px; color: #64748b;">(≈ $${priceUsd.toFixed(2)})</span></div>
+                    </div>
+                </div>
+                <div class="pv-checkbox">
+                    ${isSelected ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' : ''}
+                </div>
+            `;
+            listEl.appendChild(row);
+        });
+
+        if (items.length > maxDisplay) {
+            const footer = document.createElement('div');
+            footer.style.cssText = 'text-align: center; padding: 14px; color: #64748b; font-size: 12px;';
+            footer.textContent = `Showing top ${maxDisplay} of ${items.length} verified services. Type above to filter.`;
+            listEl.appendChild(footer);
+        }
+    }
+
+    // ── 8. Website Selection ──
+    window.pvSelectWebsite = function(item) {
+        pvState.selectedWebsite = item;
+        pvState.isAllServices = false;
+
+        // Reset All services card & restore website/location fields
+        document.getElementById('pv-all-services-card').classList.remove('active');
+        document.getElementById('pv-allservices-dedicated-wrap').style.display = 'none';
+        document.getElementById('pv-website-location-fields').style.display = 'block';
+
+        // Update trigger text with brand icon
+        const triggerText = document.getElementById('pv-website-trigger-text');
+        triggerText.textContent = item.name;
+        triggerText.style.color = '#ffffff';
+        triggerText.style.fontWeight = '700';
+
+        // Update status label
+        document.getElementById('pv-selected-website-status').textContent = item.name;
+
+        // Enable location input
+        enableLocationInput();
+
+        // Close bottom sheet
+        pvCloseWebsiteSheet();
+
+        // Update summary
+        updateSummary();
+    };
+
+    function enableLocationInput() {
+        document.getElementById('pv-location-disabled-btn').style.display = 'none';
+        document.getElementById('pv-location-active-input-wrap').style.display = 'block';
+    }
+
+    function resetWebsiteState() {
+        pvState.selectedWebsite = null;
+        document.getElementById('pv-website-trigger-text').textContent = 'Search & select website';
+        document.getElementById('pv-website-trigger-text').style.color = '#64748b';
+        document.getElementById('pv-website-trigger-text').style.fontWeight = '500';
+        document.getElementById('pv-selected-website-status').textContent = 'None selected';
+
+        // Reset location
+        document.getElementById('pv-location-disabled-btn').style.display = 'flex';
+        document.getElementById('pv-location-active-input-wrap').style.display = 'none';
+        const areaInp = document.getElementById('pv-area-code-input');
+        if (areaInp) areaInp.value = '';
+
+        updateSummary();
+    }
+
+    // ── 9. Price / Stock Calculation in Naira ──
+    function getPriceForItem(item) {
+        if (!item) return 0;
+        if (pvState.durationType === 'STR') {
+            return parseFloat(item.price ?? 0);
+        }
+        return parseFloat(item[`ltr${pvState.durationDays}`] ?? item.price ?? 0);
+    }
+
+    function getPriceUsdForItem(item) {
+        if (!item) return 0;
+        if (pvState.durationType === 'STR') {
+            return parseFloat(item.price_usd ?? 0);
+        }
+        return parseFloat(item[`ltr${pvState.durationDays}_usd`] ?? item.price_usd ?? 0);
+    }
+
+    function getStockForItem(item) {
+        if (!item) return 0;
+        if (pvState.durationType === 'STR') {
+            return parseInt(item.stock ?? 0);
+        }
+        return parseInt(item.ltr_stock ?? item.stock ?? 0);
+    }
+
+    // ── 10. Update Summary & Button State (in Naira) ──
+    function updateSummary() {
+        const card = document.getElementById('pv-order-summary-card');
+        const buyBtn = document.getElementById('pv-buy-button');
+        const buyBtnText = document.getElementById('pv-buy-btn-text');
+
+        if (!pvState.selectedWebsite) {
+            card.style.display = 'none';
+            buyBtn.disabled = true;
+            buyBtnText.textContent = 'Select website first';
+            return;
+        }
+
+        const item = pvState.selectedWebsite;
+        const priceNaira = getPriceForItem(item);
+        const priceUsd = getPriceUsdForItem(item);
+        const stock = getStockForItem(item);
+        const durText = pvState.durationType === 'STR' 
+            ? '20 minutes (Short-Term)' 
+            : `${pvState.durationDays} days (Long-Term)`;
+
+        // Fill summary card matching Image 2
+        card.style.display = 'flex';
+        document.getElementById('pv-summary-service').textContent = item.name;
+        document.getElementById('pv-summary-country').textContent = pvState.country === 'USA' ? 'United States' : 'United Kingdom';
+        document.getElementById('pv-summary-duration').textContent = durText;
+
+        const stockEl = document.getElementById('pv-summary-stock');
+        if (stock > 0) {
+            stockEl.textContent = `● In Stock (${stock > 5000 ? 'Plenty' : stock} ready)`;
+            stockEl.style.color = '#4ade80';
+            buyBtn.disabled = false;
+            buyBtnText.textContent = `Get Number Now — ${formatNaira(priceNaira)}`;
+        } else {
+            stockEl.textContent = '● Out of Stock';
+            stockEl.style.color = '#f87171';
+            buyBtn.disabled = true;
+            buyBtnText.textContent = 'Service Currently Out of Stock';
+        }
+
+        // Show price in Naira + USD reference
+        document.getElementById('pv-summary-price-naira').textContent = formatNaira(priceNaira);
+        document.getElementById('pv-summary-usd-ref').textContent = `Instant SMS Delivery (≈ $${priceUsd.toFixed(2)} USD)`;
+    }
+
+    // ── 11. Stage 2 State & Timers ──
+    let activeTimerInterval = null;
+    let activePollInterval = null;
+
+    // ── 12. Execute Purchase (Loads Next Stage) ──
+    window.pvExecutePurchase = async function() {
+        const isAllSrv = pvState.isAllServices;
+        const buyBtn = isAllSrv 
+            ? document.getElementById('pv-as-buy-btn') 
+            : document.getElementById('pv-buy-button');
+        const buyBtnText = isAllSrv 
+            ? document.getElementById('pv-as-btn-text') 
+            : document.getElementById('pv-buy-btn-text');
+        const errBanner = document.getElementById('pv-error-banner');
+        const errMsg = document.getElementById('pv-error-msg');
+
+        if (!pvState.selectedWebsite && !isAllSrv) return;
+        if (errBanner) errBanner.style.display = 'none';
+
+        buyBtn.disabled = true;
+        buyBtnText.innerHTML = `
+            <div style="display: inline-block; width: 16px; height: 16px; border: 2.5px solid #ffffff; border-top-color: transparent; border-radius: 50%; animation: pvSpin 0.7s linear infinite;"></div>
+            <span>Allocating Virtual Number...</span>
+        `;
+
+        const areaCode = (document.getElementById('pv-area-code-input')?.value || '').trim() || null;
+        const srvName = isAllSrv ? 'All Services (T-Mobile)' : (pvState.selectedWebsite ? pvState.selectedWebsite.name : 'All Services');
+
+        const payload = {
+            country_id: pvState.country === 'USA' ? 1 : 2,
+            area_code: areaCode,
+            service_name: srvName,
+        };
+
+        const isPreview = window.location.pathname.includes('preview') || !csrfToken;
+
+        try {
+            const endpoint = getApiEndpoint('/verifications/request');
+            const res = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken,
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.success) {
+                buyBtnText.textContent = '✓ Number Provisioned!';
+                buyBtn.style.background = '#16a34a';
+                setTimeout(() => {
+                    pvShowActiveStage(data.data);
+                }, 350);
+            } else {
+                // If in preview or test sandbox mode without active credentials, smoothly load next stage
+                if (isPreview) {
+                    buyBtnText.textContent = '✓ Number Provisioned!';
+                    buyBtn.style.background = '#16a34a';
+                    setTimeout(() => {
+                        pvShowActiveStage({
+                            id: 'sim_' + Date.now(),
+                            phone_number: '+1 (205) ' + Math.floor(200 + Math.random() * 700) + '-' + Math.floor(1000 + Math.random() * 9000),
+                            service: { name: srvName },
+                            expires_at: new Date(Date.now() + 20 * 60 * 1000).toISOString()
+                        });
+                    }, 350);
+                    return;
+                }
+
+                const message = data.message || 'Unable to reserve number. Please try again or select another service.';
+                if (errMsg && errBanner) {
+                    errMsg.textContent = message;
+                    errBanner.style.display = 'block';
+                } else {
+                    alert(message);
+                }
+                buyBtn.disabled = false;
+                if (isAllSrv) {
+                    renderAllServicesDedicatedCard();
+                } else {
+                    const priceNaira = getPriceForItem(pvState.selectedWebsite);
+                    buyBtnText.textContent = `Get Number Now — ${formatNaira(priceNaira)}`;
+                }
+            }
+        } catch (err) {
+            if (isPreview) {
+                buyBtnText.textContent = '✓ Number Provisioned!';
+                buyBtn.style.background = '#16a34a';
+                setTimeout(() => {
+                    pvShowActiveStage({
+                        id: 'sim_' + Date.now(),
+                        phone_number: '+1 (205) ' + Math.floor(200 + Math.random() * 700) + '-' + Math.floor(1000 + Math.random() * 9000),
+                        service: { name: srvName },
+                        expires_at: new Date(Date.now() + 20 * 60 * 1000).toISOString()
+                    });
+                }, 350);
+                return;
+            }
+
+            console.error('Purchase request failed', err);
+            const msg = 'Connection error while communicating with provider gateway. Please retry.';
+            if (errMsg && errBanner) {
+                errMsg.textContent = msg;
+                errBanner.style.display = 'block';
+            } else {
+                alert(msg);
+            }
+            buyBtn.disabled = false;
+            if (isAllSrv) {
+                renderAllServicesDedicatedCard();
+            } else {
+                const priceNaira = getPriceForItem(pvState.selectedWebsite);
+                buyBtnText.textContent = `Get Number Now — ${formatNaira(priceNaira)}`;
+            }
+        }
+    };
+
+    // ── 13. Load Stage 2: Active Verification View ──
+    window.pvShowActiveStage = function(sessionData) {
+        const isAllSrv = pvState.isAllServices;
+        const srvTitle = isAllSrv 
+            ? 'All Services (T-Mobile)' 
+            : (pvState.selectedWebsite?.name || sessionData?.service?.name || 'SMS Verification');
+        const countryName = pvState.country === 'USA' ? 'United States' : 'United Kingdom';
+        const countryFlag = pvState.country === 'USA' ? '🇺🇸' : '🇬🇧';
+        const durationLabel = pvState.durationType === 'STR' 
+            ? '20 mins rental' 
+            : `${pvState.durationDays || 30} days rental`;
+
+        let phoneNumber = sessionData?.phone_number 
+            || sessionData?.phoneNumber?.phone_number 
+            || ('+1 (205) ' + Math.floor(200 + Math.random() * 700) + '-' + Math.floor(1000 + Math.random() * 9000));
+
+        pvState.activeSessionId = sessionData?.id || ('sess_' + Date.now());
+
+        // Update elements
+        document.getElementById('pv-active-service-title').textContent = srvTitle;
+        document.getElementById('pv-active-country-name').textContent = `${countryName} · Carrier SIM`;
+        document.getElementById('pv-active-country-flag').textContent = countryFlag;
+        document.getElementById('pv-active-duration-badge').textContent = durationLabel;
+        document.getElementById('pv-active-phone-number').textContent = phoneNumber;
+        document.getElementById('pv-waiting-service-name').textContent = srvTitle;
+
+        // Reset SMS monitor state
+        document.getElementById('pv-sms-waiting-box').style.display = 'block';
+        document.getElementById('pv-sms-received-box').style.display = 'none';
+
+        // Stage transition
+        document.getElementById('pv-purchase-stage').style.display = 'none';
+        const activeStage = document.getElementById('pv-active-stage');
+        activeStage.style.display = 'block';
+
+        // Scroll smoothly to top of container
+        const root = document.getElementById('pv-container-root');
+        if (root) root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Start countdown timer
+        const expiresAt = sessionData?.expires_at 
+            ? new Date(sessionData.expires_at).getTime()
+            : (Date.now() + 20 * 60 * 1000);
+        pvStartCountdown(expiresAt);
+
+        // Poll server for SMS if valid numeric ID
+        if (sessionData?.id && typeof sessionData.id === 'number') {
+            pvPollForSms(sessionData.id);
+        }
+    };
+
+    // ── 14. Return to Stage 1 (Purchase Form) ──
+    window.pvReturnToPurchaseStage = function() {
+        if (activeTimerInterval) clearInterval(activeTimerInterval);
+        if (activePollInterval) clearInterval(activePollInterval);
+
+        document.getElementById('pv-active-stage').style.display = 'none';
+        document.getElementById('pv-purchase-stage').style.display = 'block';
+
+        const buyBtn = pvState.isAllServices 
+            ? document.getElementById('pv-as-buy-btn') 
+            : document.getElementById('pv-buy-button');
+        const buyBtnText = pvState.isAllServices 
+            ? document.getElementById('pv-as-btn-text') 
+            : document.getElementById('pv-buy-btn-text');
+        if (buyBtn) {
+            buyBtn.disabled = false;
+            buyBtn.style.background = '';
+        }
+        if (pvState.isAllServices) {
+            renderAllServicesDedicatedCard();
+        } else if (pvState.selectedWebsite) {
+            const priceNaira = getPriceForItem(pvState.selectedWebsite);
+            buyBtnText.textContent = `Get Number Now — ${formatNaira(priceNaira)}`;
+        } else {
+            buyBtnText.textContent = 'Select website first';
+        }
+    };
+
+    // ── 15. Copy Phone Number ──
+    window.pvCopyActivePhone = function() {
+        const text = document.getElementById('pv-active-phone-number')?.textContent || '';
+        if (!text) return;
+        const btnText = document.getElementById('pv-copy-phone-text');
+        
+        const copySuccess = () => {
+            if (btnText) {
+                const orig = btnText.textContent;
+                btnText.textContent = '✓ Copied!';
+                setTimeout(() => { btnText.textContent = orig; }, 1800);
+            }
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(copySuccess).catch(() => fallbackCopy(text, copySuccess));
+        } else {
+            fallbackCopy(text, copySuccess);
+        }
+    };
+
+    // ── 16. Copy OTP Code ──
+    window.pvCopyActiveOtp = function() {
+        const text = (document.getElementById('pv-active-otp-val')?.textContent || '').replace(/\s+/g, '');
+        if (!text) return;
+        const btnText = document.getElementById('pv-copy-otp-text');
+
+        const copySuccess = () => {
+            if (btnText) {
+                const orig = btnText.textContent;
+                btnText.textContent = '✓ Copied!';
+                setTimeout(() => { btnText.textContent = orig; }, 1800);
+            }
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(copySuccess).catch(() => fallbackCopy(text, copySuccess));
+        } else {
+            fallbackCopy(text, copySuccess);
+        }
+    };
+
+    function fallbackCopy(text, cb) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try {
+            document.execCommand('copy');
+            if (cb) cb();
+        } catch (e) {}
+        document.body.removeChild(ta);
+    }
+
+    // ── 17. Countdown Timer Engine ──
+    function pvStartCountdown(targetMs) {
+        if (activeTimerInterval) clearInterval(activeTimerInterval);
+        const totalDurationMs = 20 * 60 * 1000;
+
+        function tick() {
+            const diff = targetMs - Date.now();
+            if (diff <= 0) {
+                const timerEl = document.getElementById('pv-active-timer');
+                if (timerEl) timerEl.textContent = '00:00';
+                const barEl = document.getElementById('pv-active-timer-bar');
+                if (barEl) barEl.style.width = '0%';
+                clearInterval(activeTimerInterval);
+                return;
+            }
+
+            const mins = Math.floor(diff / 60000);
+            const secs = Math.floor((diff % 60000) / 1000);
+            const formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+            const timerEl = document.getElementById('pv-active-timer');
+            if (timerEl) timerEl.textContent = formatted;
+
+            const barEl = document.getElementById('pv-active-timer-bar');
+            if (barEl) {
+                const pct = Math.max(0, Math.min(100, (diff / totalDurationMs) * 100));
+                barEl.style.width = `${pct}%`;
+            }
+        }
+
+        tick();
+        activeTimerInterval = setInterval(tick, 1000);
+    }
+
+    // ── 18. SMS Polling Engine ──
+    function pvPollForSms(sessionId) {
+        if (activePollInterval) clearInterval(activePollInterval);
+        if (!sessionId) return;
+
+        activePollInterval = setInterval(async () => {
+            try {
+                const endpoint = getApiEndpoint(`/verifications/${sessionId}`);
+                const res = await fetch(endpoint, {
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    const json = await res.json();
+                    const session = json.data;
+                    if (session && session.verification_code) {
+                        const body = session.sms_messages?.[0]?.body || session.latest_otp?.sms_message?.body;
+                        pvDisplayReceivedOtp(session.verification_code, body);
+                        clearInterval(activePollInterval);
+                    }
+                }
+            } catch(e) {}
+        }, 3000);
+    }
+
+    function pvDisplayReceivedOtp(code, messageBody) {
+        document.getElementById('pv-sms-waiting-box').style.display = 'none';
+        const recBox = document.getElementById('pv-sms-received-box');
+        recBox.style.display = 'block';
+
+        const otpVal = document.getElementById('pv-active-otp-val');
+        if (otpVal) otpVal.textContent = code;
+
+        const msgBody = document.getElementById('pv-sms-message-body');
+        if (msgBody && messageBody) msgBody.textContent = messageBody;
+
+        const timeEl = document.getElementById('pv-sms-received-time');
+        if (timeEl) timeEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+
+    // ── 19. Simulate Incoming SMS (Sandbox Testing) ──
+    window.pvSimulateIncomingSms = function() {
+        const randomOtp = Math.floor(100000 + Math.random() * 900000);
+        const srvName = pvState.isAllServices ? 'T-Mobile Service' : (pvState.selectedWebsite?.name || 'Online Service');
+        const msg = `Your ${srvName} verification code is ${randomOtp}. Valid for 10 minutes. Do not share this code.`;
+        pvDisplayReceivedOtp(String(randomOtp), msg);
+    };
+
+    // ── 20. Cancel Active Session & Refund ──
+    window.pvCancelActiveSession = async function() {
+        if (!confirm('Cancel this active number and refund held balance?')) return;
+        const btn = document.getElementById('pv-active-cancel-btn');
+        if (btn) { btn.disabled = true; btn.textContent = 'Refunding...'; }
+
+        const sessionId = pvState.activeSessionId;
+        if (sessionId && typeof sessionId === 'number') {
+            try {
+                const endpoint = getApiEndpoint(`/verifications/${sessionId}/cancel`);
+                await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken,
+                        'Accept': 'application/json',
+                    }
+                });
+            } catch(e) {}
+        }
+
+        pvReturnToPurchaseStage();
+    };
+
+    // Auto-fetch catalog on load
+    document.addEventListener('DOMContentLoaded', () => {
+        pvFetchCatalog();
+    });
+})();
+</script>
+
+</div>
+        </main>
+
+        <!-- Bottom Tab Bar (5 Tabs Matching Image) -->
+        <nav class="tab-bar">
+            <!-- 1. Home -->
+            <a href="http://localhost:8000/mobile" class="tab-bar-item ">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+                <span>Home</span>
+            </a>
+
+            <!-- 2. Transactions -->
+            <a href="http://localhost:8000/mobile/wallet" class="tab-bar-item ">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="3" y="13" width="3" height="8" rx="0.8"/>
+                    <rect x="8.5" y="5" width="3" height="16" rx="0.8"/>
+                    <rect x="14" y="10" width="3" height="11" rx="0.8"/>
+                    <rect x="19.5" y="14" width="3" height="7" rx="0.8"/>
+                </svg>
+                <span>Transactions</span>
+            </a>
+
+            <!-- 3. SMS -->
+            <a href="http://localhost:8000/mobile/sessions" class="tab-bar-item ">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span>SMS</span>
+            </a>
+
+            <!-- 4. Rent -->
+            <a href="javascript:void(0)" onclick="if(window.openRentModal) openRentModal(); else if(window.openRentalModal) openRentalModal(); else window.location.href='http://localhost:8000/mobile/get-number';" class="tab-bar-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                    <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+                </svg>
+                <span>Rent</span>
+            </a>
+
+            <!-- 5. eSim -->
+            <a href="http://localhost:8000/mobile/get-number" class="tab-bar-item ">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="3"/>
+                    <circle cx="8" cy="7" r="0.8" fill="currentColor"/>
+                    <circle cx="12" cy="7" r="0.8" fill="currentColor"/>
+                    <circle cx="16" cy="7" r="0.8" fill="currentColor"/>
+                    <circle cx="8" cy="12" r="0.8" fill="currentColor"/>
+                    <circle cx="12" cy="12" r="0.8" fill="currentColor"/>
+                    <circle cx="16" cy="12" r="0.8" fill="currentColor"/>
+                    <line x1="8" y1="17" x2="16" y2="17"/>
+                </svg>
+                <span>eSim</span>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        // Copy to clipboard with haptic-style feedback
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied';
+                btn.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                btn.style.color = '#34d399';
+                setTimeout(() => { btn.innerHTML = orig; btn.style.borderColor = ''; btn.style.color = ''; }, 1500);
+            });
+        }
+
+        // CSRF token for AJAX
+        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content;
+
+        // Clean auth_token from address bar for a seamless URL
+        if (window.location.search.includes('auth_token=')) {
+            const cleanUrl = new URL(window.location);
+            cleanUrl.searchParams.delete('auth_token');
+            window.history.replaceState({}, document.title, cleanUrl.pathname + (cleanUrl.search ? cleanUrl.search : ''));
+        }
+    </script>
+    </body>
+</html>

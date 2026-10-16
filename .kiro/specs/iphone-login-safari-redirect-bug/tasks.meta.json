@@ -1,0 +1,148 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Write bug condition exploration test": [
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676814464
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676827874
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790677211985
+      }
+    ],
+    "2. Write preservation property tests (BEFORE implementing fix)": [
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676814595
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790677217492
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790677639986
+      }
+    ],
+    "3.1 Add login suppression logic to payment-sync.js": [
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676814685
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790677673102
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790677777665
+      }
+    ],
+    "3.2 Update AuthController.php to set login session flag": [
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676814759
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790677782477
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790677843266
+      }
+    ],
+    "3.3 Update mobile.blade.php to transfer flag to sessionStorage": [
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676814949
+      },
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790677848394
+      },
+      {
+        "executionId": "67451acb-849a-42dc-9533-56141bfd1cf8",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790678148327
+      }
+    ],
+    "3.4 Verify bug condition exploration test now passes": [
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676815022
+      },
+      {
+        "executionId": "67451acb-849a-42dc-9533-56141bfd1cf8",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790678172206
+      },
+      {
+        "executionId": "67451acb-849a-42dc-9533-56141bfd1cf8",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790678235242
+      }
+    ],
+    "3.5 Verify preservation tests still pass": [
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676815114
+      },
+      {
+        "executionId": "67451acb-849a-42dc-9533-56141bfd1cf8",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790678251830
+      },
+      {
+        "executionId": "67451acb-849a-42dc-9533-56141bfd1cf8",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790678283000
+      }
+    ],
+    "4. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "7023229e-9ab3-43b4-a7c2-91a0179e0044",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790676815192
+      },
+      {
+        "executionId": "67451acb-849a-42dc-9533-56141bfd1cf8",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790678292899
+      },
+      {
+        "executionId": "67451acb-849a-42dc-9533-56141bfd1cf8",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790678375808
+      }
+    ],
+    "3. Implement fix for iPhone login Safari redirect bug": [
+      {
+        "executionId": "67451acb-849a-42dc-9533-56141bfd1cf8",
+        "chatSessionId": "sess_af828a50-0070-496e-b181-d3b153a45289",
+        "timestamp": 1790678283121
+      }
+    ]
+  }
+}
